@@ -18,6 +18,9 @@ export class AppComponent {
   user: string = '';
   password: string = '';
 
+  balance: number = 2000000;
+  value: number = 0;
+
   //Cambia el estado del login a true para que se visualice
   //y cambia el estado del home para que se oculte
   access(item: boolean) {
@@ -32,6 +35,14 @@ export class AppComponent {
     } else {
       alert('Acceso denegado');
     }
+  }
+
+  pay(){
+    this.balance = this.balance + this.value;
+  }
+
+  remove(){
+    this.balance = this.balance - this.value;
   }
 
   constructor() {}

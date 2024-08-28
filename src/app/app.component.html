@@ -1,6 +1,6 @@
 <body class="flex flex-col justify-center items-center h-[90vh] p-2">
   <!-- Vista de inicio -->
-  <div *ngIf="home" class="flex flex-col justify-center items-center">
+  <!-- <div *ngIf="home" class="flex flex-col justify-center items-center">
     <div>
       <img
         class="w-[20.75rem] h-[19.75rem] absolute -z-10"
@@ -25,10 +25,10 @@
     >
       Acceder
     </button>
-  </div>
+  </div> -->
 
   <!-- Vista de loggin -->
-  <div *ngIf="loginAcess" class="flex flex-col justify-center items-center">
+  <!-- <div *ngIf="loginAcess" class="flex flex-col justify-center items-center">
     <img
       class="w-[18.75rem] h-[18.75rem] z-10 relative mb-[3rem]"
       src="../assets/logocarter.png"
@@ -59,10 +59,38 @@
     >
       Ingresar
     </button>
-  </div>
+  </div> -->
 
   <!-- Vista de aplicativo -->
-  <div *ngIf="dashboard">
-    <p>Aquí van las funciones del aplicativo de cajero</p>
+  <div>
+    <p>Bienvenido Kadir</p>
+    <p>Saldo de la cuenta</p>
+    <p>$ {{ balance }}</p>
+    <p class="font-bold">Transacciones principales</p>
+
+    <button
+      class="bg-green-600 text-center text-lg text-white rounded-md w-[6.25rem] h-[4.5rem]"
+      (click)="pay()"
+    >
+      <img
+        src="../assets/payments_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg"
+        alt="paymentsIcon"
+        class="ml-10"
+      />Abonar
+    </button>
+    <button
+      class="bg-red-700 text-center text-lg text-white rounded-md w-[6.25rem] h-[4.5rem]"
+      (click)="remove()"
+    >
+      <img
+        src="../assets/payments_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg"
+        alt="paymentsIcon"
+        class="ml-10"
+      />Retirar
+    </button>
+
+    <input type="number" placeholder="Ingrese el saldo" [(ngModel)]="value">
   </div>
 </body>
+
+<!-- *ngIf="dashboard" -->
