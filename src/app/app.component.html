@@ -1,6 +1,6 @@
 <body class="flex flex-col justify-center items-center h-[90vh] p-2">
   <!-- Vista de inicio -->
-  <!-- <div *ngIf="home" class="flex flex-col justify-center items-center">
+  <div *ngIf="home" class="flex flex-col justify-center items-center">
     <div>
       <img
         class="w-[20.75rem] h-[19.75rem] absolute -z-10"
@@ -25,10 +25,10 @@
     >
       Acceder
     </button>
-  </div> -->
+  </div>
 
   <!-- Vista de loggin -->
-  <!-- <div *ngIf="loginAcess" class="flex flex-col justify-center items-center">
+  <div *ngIf="loginAcess" class="flex flex-col justify-center items-center">
     <img
       class="w-[18.75rem] h-[18.75rem] z-10 relative mb-[3rem]"
       src="../assets/logocarter.png"
@@ -59,10 +59,10 @@
     >
       Ingresar
     </button>
-  </div> -->
+  </div>
 
   <!-- Vista de aplicativo -->
-  <div>
+  <div *ngIf="dashboard">
     <p>Bienvenido Kadir</p>
     <p>Saldo de la cuenta</p>
     <p>$ {{ balance }}</p>
@@ -93,4 +93,4 @@
   </div>
 </body>
 
-<!-- *ngIf="dashboard" -->
+<!--  -->
