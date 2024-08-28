@@ -1,5 +1,34 @@
 <body class="flex flex-col justify-center items-center h-[90vh] p-2">
-  <div class="flex flex-col justify-center items-center">
+  <!-- Vista de inicio -->
+  <div *ngIf="home" class="flex flex-col justify-center items-center">
+    <div>
+      <img
+        class="w-[20.75rem] h-[19.75rem] absolute -z-10"
+        src="../assets/LogoInicioFondo.png"
+        alt="ImagenDeInicioFondo"
+      />
+      <img
+        class="w-[20.75rem] h-[20.75rem] z-10 relative"
+        src="../assets/LogoInicio.png"
+        alt="ImagenDeInicio"
+      />
+    </div>
+
+    <p class="text-[#000] text-2xl mt-10">Lo hacemos fácil para ti.</p>
+    <p class="text-[#000] text-2xl text-center">
+      Tu dinero y movimientos seguros con tu cuenta
+      <span class="text-[#022a9b] font-bold">FinanceFlow</span>
+    </p>
+    <button
+      (click)="access(true)"
+      class="bg-[#022a9b] text-white font-bold text-lg p-3 mt-12 w-[18.75rem] border rounded-3xl"
+    >
+      Acceder
+    </button>
+  </div>
+
+  <!-- Vista de loggin -->
+  <div *ngIf="loginAcess" class="flex flex-col justify-center items-center">
     <img
       class="w-[18.75rem] h-[18.75rem] z-10 relative mb-[3rem]"
       src="../assets/logocarter.png"
@@ -7,48 +36,33 @@
     />
 
     <input
+      [(ngModel)]="user"
+      id="user"
+      name="user"
       type="text"
       placeholder="Usuario"
       class="border-b-2 border-gray-400 placeholder:text-[#000] text-xl p-2"
     />
 
     <input
+      [(ngModel)]="password"
+      id="password"
+      name="password"
       type="tel"
       placeholder="Clave"
       class="border-b-2 border-gray-400 placeholder:text-[#000] text-xl p-2 mt-5"
     />
 
     <button
+      (click)="login()"
       class="bg-[#022a9b] text-white font-bold text-lg p-3 mt-14 w-[18.75rem] border rounded-3xl"
     >
       Ingresar
     </button>
   </div>
-</body>
 
-<!--Vista de inicio-->
-<!-- <div class="flex flex-col justify-center items-center">
-  <div>
-    <img
-      class="w-[36rem] h-[32.5rem] absolute z-0"
-      src="../assets/LogoInicioFondo.png"
-      alt="ImagenDeInicioFondo"
-    />
-    <img
-      class="w-[18.75rem] h-[18.75rem] z-10 relative"
-      src="../assets/LogoInicio.png"
-      alt="ImagenDeInicio"
-    />
+  <!-- Vista de aplicativo -->
+  <div *ngIf="dashboard">
+    <p>Aquí van las funciones del aplicativo de cajero</p>
   </div>
-
-  <p class="text-[#000] text-2xl mt-10">Lo hacemos fácil para ti.</p>
-  <p class="text-[#000] text-2xl text-center">
-    Tu dinero y movimientos seguros con tu cuenta
-    <span class="text-[#022a9b] font-bold">FinanceFlow</span>
-  </p>
-  <button
-    class="bg-[#022a9b] text-white font-bold text-lg p-3 mt-12 w-[18.75rem] border rounded-3xl"
-  >
-    Acceder
-  </button>
-</div> -->
+</body>
