@@ -1,0 +1,29 @@
+.hexagon {
+  width: 200px; /* Ancho de la figura */
+  height: 6.25rem; /* Altura de la figura */
+  background-color: #FF5E6D; /* Color de fondo */
+  position: relative;
+  margin: 0 auto; /* Centramos el hexágono */
+  top: 6.25rem; /* Puedes ajustar la posición vertical si lo necesitas */
+  z-index: -1;
+}
+
+.hexagon::before,
+.hexagon::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  border-left: 6.25rem solid transparent;
+  border-right: 6.25rem solid transparent;
+}
+
+.hexagon::before {
+  bottom: 100%;
+  border-bottom: 3.125rem solid #FF5E6D;
+}
+
+.hexagon::after {
+  top: 100%;
+  width: 0;
+  border-top: 3.125rem solid #FF5E6D;
+}

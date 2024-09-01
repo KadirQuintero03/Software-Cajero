@@ -1,0 +1,37 @@
+<!-- Vista de loggin -->
+<body class="flex flex-col justify-center items-center h-[90vh] p-2">
+  <div class="flex flex-col justify-center items-center" *ngIf="login">
+    <img
+      class="w-[18.75rem] h-[18.75rem] z-10 relative mb-[3rem]"
+      src="../../../../assets/logocarter.png"
+      alt="ImagenDeLoco"
+    />
+
+    <input
+
+      id="user"
+      name="user"
+      type="text"
+      placeholder="Usuario"
+      class="border-b-2 border-gray-400 placeholder:text-[#000] text-xl p-2"
+    />
+
+    <input
+
+      id="password"
+      name="password"
+      type="tel"
+      placeholder="Clave"
+      class="border-b-2 border-gray-400 placeholder:text-[#000] text-xl p-2 mt-5"
+    />
+
+    <button
+      (click)="loggin()"
+      class="bg-[#022a9b] text-white font-bold text-lg p-3 mt-14 w-[18.75rem] border rounded-3xl"
+    >
+      Ingresar
+    </button>
+  </div>
+
+  <app-dashboard-page *ngIf="dashboard"/>
+</body>
