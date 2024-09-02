@@ -1,21 +1,21 @@
 <div class="w-full h-[85vh] flex justify-center items-center">
   <div
-    class="w-[400px] h-[280px] bg-[#FFFFFF] p-8 rounded-[20px] flex justify-center items-center flex-col gap-10"
+    class="bg-[#FFFFFF] p-12 rounded-[1.25rem] flex justify-center items-center flex-col gap-10"
   >
-    <div class="text-center">
+    <div class="text-center p-5 rounded-[6.25rem] text-[#FFFFFF] bg-[#FF5E6D]">
       <p>Clave dinamica:</p>
       <p>65321</p>
     </div>
-    <input type="number" placeholder="Ingrese la clave dinamica" />
+    <input type="number" placeholder="Ingrese la clave dinamica" class="p-2 border-b-2 focus:outline-none"/>
     <div class="flex gap-10">
       <button
-        class="border border-red-700 text-center text-2xl font-bold text-red-700 rounded-md h-[3.125rem] w-[8.125rem]"
+        class="border border-[#022a9b] text-center text-2xl text-[#022a9b] rounded-md p-2"
         (click)="close()"
       >
         Cancelar
       </button>
       <button
-        class="bg-green-700 text-center text-2xl font-bold text-[#fff] rounded-md h-[3.125rem] w-[8.125rem]"
+        class="bg-[#022a9b] text-center text-2xl font-bold text-[#FFFFFF] rounded-md p-2"
       >
         Confirmar
       </button>
