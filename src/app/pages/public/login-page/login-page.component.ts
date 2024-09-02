@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { User1 } from 'src/app/interfaces/User';
-import { User2 } from 'src/app/interfaces/User';
+import { User1, User2 } from 'src/app/interfaces/User';
+import { StateServiceService } from 'src/app/services/state-service.service';
 
 @Component({
   selector: 'app-login-page',
@@ -8,6 +8,8 @@ import { User2 } from 'src/app/interfaces/User';
   styleUrls: ['./login-page.component.css'],
 })
 export class LoginPageComponent {
+  constructor(private stateService: StateServiceService){}
+
   user1: User1 = new User1();
   user2: User2 = new User2();
 
@@ -30,6 +32,8 @@ export class LoginPageComponent {
         this.phoneNumber == '03012110285' &&
         this.password == this.user1._password
       ) {
+        this.stateService.setNequiState(true);
+        this.stateService.setBancoState(false);
         this.login = false;
         return (this.dashboard = true);
       } else {
@@ -45,6 +49,8 @@ export class LoginPageComponent {
         this.phoneNumber == '13205555181' &&
         this.password == this.user2._password1
       ) {
+        this.stateService.setNequiState(false);
+        this.stateService.setBancoState(true);
         this.login = false;
         return (this.dashboard = true);
       } else {
