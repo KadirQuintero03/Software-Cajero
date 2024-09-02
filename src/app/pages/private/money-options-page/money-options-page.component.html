@@ -1,49 +1,67 @@
 <div class="flex justify-center items-center flex-col gap-16 w-full h-[90vh]">
-  <div class="flex gap-[150px]">
-    <div class="flex flex-col gap-10">
-      <button class="bg-[#022a9b] p-3 rounded-lg text-[#fff] font-bold text-xl">
-        10.000
+  <div class="bg-[#FFFFFF] p-[2.5rem] flex justify-center items-center flex-col gap-10 rounded-xl">
+    <div class="flex gap-[6.25rem]">
+      <div class="flex flex-col gap-7">
+        <button
+          class="bg-[#FF5E6D] p-3 rounded-lg text-[#fff] font-bold text-xl"
+        >
+          10.000
+        </button>
+        <button
+          class="bg-[#FF5E6D] p-3 rounded-lg text-[#fff] font-bold text-xl"
+        >
+          20.000
+        </button>
+        <button
+          class="bg-[#FF5E6D] p-3 rounded-lg text-[#fff] font-bold text-xl"
+        >
+          50.000
+        </button>
+        <button
+          class="bg-[#FF5E6D] p-3 rounded-lg text-[#fff] font-bold text-xl"
+        >
+          100.000
+        </button>
+      </div>
+      <div class="flex flex-col gap-7">
+        <button
+          class="bg-[#FF5E6D] p-3 rounded-lg text-[#fff] font-bold text-xl"
+        >
+          200.000
+        </button>
+        <button
+          class="bg-[#FF5E6D] p-3 rounded-lg text-[#fff] font-bold text-xl"
+        >
+          500.000
+        </button>
+        <button
+          class="bg-[#FF5E6D] p-3 rounded-lg text-[#fff] font-bold text-xl"
+        >
+          600.000
+        </button>
+        <button
+          class="bg-[#FF5E6D] p-3 rounded-lg text-[#fff] font-bold text-xl"
+        >
+          Otro
+        </button>
+      </div>
+    </div>
+
+    <div class="flex gap-16">
+      <button
+        class="border border-[#022a9b] text-center text-2xl text-[#022a9b] rounded-md h-[3.125rem] w-[8.125rem]"
+        (click)="close()"
+      >
+        Cancelar
       </button>
-      <button class="bg-[#022a9b] p-3 rounded-lg text-[#fff] font-bold text-xl">
-        20.000
-      </button>
-      <button class="bg-[#022a9b] p-3 rounded-lg text-[#fff] font-bold text-xl">
-        50.000
-      </button>
-      <button class="bg-[#022a9b] p-3 rounded-lg text-[#fff] font-bold text-xl">
-        100.000
+
+      <button
+        class="bg-[#022a9b] text-center text-2xl font-bold text-[#fff] rounded-md h-[3.125rem] w-[8.125rem]"
+        (click)="accesconfirm(true)"
+      >
+        Aceptar
       </button>
     </div>
-    <div class="flex flex-col gap-10">
-      <button class="bg-[#022a9b] p-3 rounded-lg text-[#fff] font-bold text-xl">
-        200.000
-      </button>
-      <button class="bg-[#022a9b] p-3 rounded-lg text-[#fff] font-bold text-xl">
-        500.000
-      </button>
-      <button class="bg-[#022a9b] p-3 rounded-lg text-[#fff] font-bold text-xl">
-        600.000
-      </button>
-      <button class="bg-[#022a9b] p-3 rounded-lg text-[#fff] font-bold text-xl">
-        Otro
-      </button>
-    </div>
-  </div>
-
-  <div class="flex gap-16">
-    <button
-      class="border border-red-700 text-center text-2xl font-bold text-red-700 rounded-md h-[3.125rem] w-[8.125rem]"
-      (click)="close()"
-    >
-      Cancelar
-    </button>
-
-    <button
-      class="bg-green-700 text-center text-2xl font-bold text-[#fff] rounded-md h-[3.125rem] w-[8.125rem]"
-      (click)="accesconfirm(true)"
-    >
-      Aceptar
-    </button>
   </div>
 
   <app-confirm-page

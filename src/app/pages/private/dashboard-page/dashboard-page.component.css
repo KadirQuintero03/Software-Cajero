@@ -1,8 +1,11 @@
 .hexagon {
-  color: #fff;
-  width: 27.313rem; /* Ancho de la figura */
-  height: 12.5rem; /* Altura de la figura */
-  background-color: #FF5E6D; /* Color de fondo */
+  color: #ffffff;
+  width: 23.75rem;
+  /* Ancho de la figura */
+  height: 12.5rem;
+  /* Altura de la figura */
+  background-color: #FF5E6D;
+  /* Color de fondo */
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -13,7 +16,8 @@
   border-bottom-left-radius: 1.25rem;
 }
 
-.linea{
-  border-bottom: 1px solid #7e93c6;
+.linea {
+  border-bottom: 3px solid #7e93c6;
   width: 90%;
+  border-radius: 1.25rem;
 }
