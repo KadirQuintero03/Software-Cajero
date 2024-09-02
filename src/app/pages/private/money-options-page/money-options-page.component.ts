@@ -6,6 +6,12 @@ import { Component, EventEmitter, Output } from '@angular/core';
   styleUrls: ['./money-options-page.component.css']
 })
 export class MoneyOptionsPageComponent {
+  confirmpage: boolean = false;
+
+  accesconfirm(value: boolean){
+    this.confirmpage = value;
+  }
+
   @Output() changeState = new EventEmitter<boolean>();
 
   close(){
