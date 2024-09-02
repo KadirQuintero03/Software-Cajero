@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./dashboard-page.component.css']
 })
 export class DashboardPageComponent {
+  moneyOption: boolean = false;
 
+  accessOptions(value: boolean){
+    this.moneyOption = value;
+  }
 }

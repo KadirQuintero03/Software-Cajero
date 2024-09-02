@@ -1,35 +1,41 @@
 <!-- Vista de aplicativo -->
 <body class="flex justify-center items-center h-[90vh] p-2">
   <div class="flex justify-center items-center flex-col">
-    <div class="hexagon"></div>
-    <p>Bienvenido Kadir</p>
-    <p>Saldo de la cuenta</p>
-    <p>$ 0,00</p>
+    <div class="hexagon">
+      <p class="text-[1.5rem] mt-5 font-bold">Cuenta de Nequi</p>
+      <p class="text-[1.125rem] mt-5">Saldo disponible</p>
+      <p class="text-[1.938rem] mt-5 font-bold">$ 2.000.000</p>
+    </div>
 
-    <p class="font-bold">Transacciones principales</p>
+    <p class="font-bold text-xl mb-3">Transacciones principales</p>
+    <div class="linea"></div>
 
-    <div class="flex gap-5">
+    <div class="flex gap-5 mt-10">
       <button
-        class="bg-green-600 text-center text-lg text-white rounded-md w-[6.25rem] h-[4.5rem]"
+        class="bg-green-600 text-center text-2xl font-bold text-white rounded-md w-[9.5rem] h-[7.25rem]"
       >
         <img
           src="../assets/payments_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg"
           alt="paymentsIcon"
-          class="ml-10"
+          class="ml-[3.75rem] w-8"
         />Abonar
       </button>
 
       <button
-        class="bg-red-700 text-center text-lg text-white rounded-md w-[6.25rem] h-[4.5rem]"
+        class="bg-red-700 text-center text-2xl font-bold text-white rounded-md w-[9.5rem] h-[7.25rem]"
+        (click)="accessOptions(true)"
       >
         <img
           src="../assets/payments_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg"
           alt="paymentsIcon"
-          class="ml-10"
+          class="ml-[3.75rem] w-8"
         />Retirar
       </button>
     </div>
-
-    <input type="number" placeholder="Ingrese el saldo" />
   </div>
+
+  <app-money-options-page
+  class="absolute inset-0 bg-white bg-opacity-50 backdrop-blur-lg z-10"
+  *ngIf="moneyOption"
+  (changeState)="accessOptions($event)"/>
 </body>

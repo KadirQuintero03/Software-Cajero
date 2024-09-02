@@ -1,29 +1,19 @@
 .hexagon {
-  width: 200px; /* Ancho de la figura */
-  height: 6.25rem; /* Altura de la figura */
+  color: #fff;
+  width: 27.313rem; /* Ancho de la figura */
+  height: 12.5rem; /* Altura de la figura */
   background-color: #FF5E6D; /* Color de fondo */
-  position: relative;
-  margin: 0 auto; /* Centramos el hexágono */
-  top: 6.25rem; /* Puedes ajustar la posición vertical si lo necesitas */
-  z-index: -1;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 3.125rem;
+  border-top-right-radius: 1.25rem;
+  border-top-left-radius: 1.25rem;
+  border-bottom-right-radius: 1.25rem;
+  border-bottom-left-radius: 1.25rem;
 }
 
-.hexagon::before,
-.hexagon::after {
-  content: "";
-  position: absolute;
-  width: 0;
-  border-left: 6.25rem solid transparent;
-  border-right: 6.25rem solid transparent;
-}
-
-.hexagon::before {
-  bottom: 100%;
-  border-bottom: 3.125rem solid #FF5E6D;
-}
-
-.hexagon::after {
-  top: 100%;
-  width: 0;
-  border-top: 3.125rem solid #FF5E6D;
+.linea{
+  border-bottom: 1px solid #7e93c6;
+  width: 90%;
 }
