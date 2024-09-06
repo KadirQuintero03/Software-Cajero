@@ -3,7 +3,7 @@
     class="bg-[#FFFFFF] p-12 rounded-[1.25rem] flex justify-center items-center flex-col gap-8"
     *ngIf="confirmPage"
   >
-    <div class="text-center p-5 rounded-[6.25rem] text-[#FFFFFF] bg-[#FF5E6D]">
+    <div class="text-center p-5 rounded-[6.25rem] text-[#FFFFFF] bg-[#FF5E6D]" *ngIf="validateKey">
       <p>Clave dinamica:</p>
       <p>{{ dinamicKey }}</p>
       <p>Su clave expira en: {{ timing }} segundos</p>

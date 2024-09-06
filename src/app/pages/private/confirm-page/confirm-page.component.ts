@@ -23,6 +23,7 @@ export class ConfirmPageComponent implements OnInit {
   billete: number[] = [10000, 20000, 50000, 100000];
   guardarBillete: number[] = [];
   cantidadBillete: { [key: number]: number } = {};
+  validateKey: boolean = false;
 
   constructor(
     private moneyService: MoneyService,
@@ -94,6 +95,7 @@ export class ConfirmPageComponent implements OnInit {
     });
 
     if (this.nequiKey) {
+      this.validateKey = true;
       this.dinamicKey = this.generateDinamicKey();
       this.startCountdown();
     }
