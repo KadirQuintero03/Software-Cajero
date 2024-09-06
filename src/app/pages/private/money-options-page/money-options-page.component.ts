@@ -7,6 +7,7 @@ import { Component, EventEmitter, Output } from '@angular/core';
 })
 export class MoneyOptionsPageComponent {
   confirmpage: boolean = false;
+  money!: number;
 
   accesconfirm(value: boolean){
     this.confirmpage = value;

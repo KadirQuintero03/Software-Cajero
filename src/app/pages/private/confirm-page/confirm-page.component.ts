@@ -8,6 +8,10 @@ import { Component, EventEmitter, Output } from '@angular/core';
 export class ConfirmPageComponent {
   @Output() changeState = new EventEmitter<boolean>();
 
+  test(){
+    alert()
+  }
+
   close(){
     this.changeState.emit(false);
   }
