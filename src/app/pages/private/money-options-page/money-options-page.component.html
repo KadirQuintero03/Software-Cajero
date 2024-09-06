@@ -49,7 +49,8 @@
           600.000
         </button>
         <button
-          class="bg-[#FF5E6D] p-3 rounded-lg text-[#fff] font-bold text-xl"
+        (click)="other = 'other'"
+          class="bg-[#FF5E6D] p-3 rounded-lg text-[#fff] font-bold text-xl focus:bg-blue-500"
         >
           Otro
         </button>
@@ -78,4 +79,9 @@
     (changeState)="accesconfirm($event)"
     class="absolute inset-0 bg-white bg-opacity-50 backdrop-blur-lg z-20"
   />
+
+  <app-other-option-page
+  *ngIf="otherOptionPage"
+  (changeState)="accesconfirm($event)"
+  class="absolute inset-0 bg-white bg-opacity-50 backdrop-blur-lg z-20"/>
 </div>

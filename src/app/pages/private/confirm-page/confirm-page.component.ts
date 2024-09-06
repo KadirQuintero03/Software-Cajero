@@ -18,10 +18,6 @@ export class ConfirmPageComponent implements OnInit {
 
   @Output() changeState = new EventEmitter<boolean>();
 
-  test() {
-    alert();
-  }
-
   close() {
     this.changeState.emit(false);
   }

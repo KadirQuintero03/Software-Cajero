@@ -1,0 +1,34 @@
+<div class="flex justify-center items-center flex-col gap-16 w-full h-[90vh]">
+  <div
+    class="bg-[#FFFFFF] p-12 rounded-[1.25rem] flex justify-center items-center flex-col gap-5"
+  >
+  <p class="text-xl">Sea usted quien decide cuanto retirar!</p>
+    <input
+      type="number"
+      placeholder="¿Cuanto desea retirar?"
+      class="p-2 border-b-2 focus:outline-none"
+      [(ngModel)] = "money"
+    />
+    <div class="flex gap-16">
+      <button
+        class="border border-[#022a9b] text-center text-2xl text-[#022a9b] rounded-md h-[3.125rem] w-[8.125rem]"
+        (click)="close()"
+      >
+        Cancelar
+      </button>
+
+      <button
+        class="bg-[#022a9b] text-center text-2xl font-bold text-[#FFFFFF] rounded-md h-[3.125rem] w-[8.125rem]"
+        (click)="confirm(true)"
+      >
+        Aceptar
+      </button>
+    </div>
+  </div>
+
+  <app-confirm-page
+    *ngIf="confirmpage"
+    (changeState)="confirm($event)"
+    class="absolute inset-0 bg-white bg-opacity-50 backdrop-blur-lg z-20"
+  />
+</div>
