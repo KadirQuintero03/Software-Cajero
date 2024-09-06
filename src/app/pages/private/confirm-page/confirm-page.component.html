@@ -4,10 +4,16 @@
   >
     <div class="text-center p-5 rounded-[6.25rem] text-[#FFFFFF] bg-[#FF5E6D]">
       <p>Clave dinamica:</p>
-      <p>{{dinamicKey}}</p>
+      <p>{{ dinamicKey }}</p>
+      <p>Su clave expira en: {{ timing }} segundos</p>
     </div>
-    <p>Valor a retirar: {{_money}}</p>
-    <input type="number" placeholder="Ingrese la clave dinamica" class="p-2 border-b-2 focus:outline-none"/>
+    <p>Valor a retirar: {{ _money }}</p>
+    <input
+      type="number"
+      placeholder="Ingrese la clave dinamica"
+      class="p-2 border-b-2 focus:outline-none"
+      [(ngModel)]="inputKey"
+    />
     <div class="flex gap-10">
       <button
         class="border border-[#022a9b] text-center text-2xl text-[#022a9b] rounded-md p-2"
@@ -16,6 +22,7 @@
         Cancelar
       </button>
       <button
+        (click)="confirmPayment()"
         class="bg-[#022a9b] text-center text-2xl font-bold text-[#FFFFFF] rounded-md p-2"
       >
         Confirmar

@@ -1,4 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { interval, Subscription } from 'rxjs';
 import { MoneyService } from 'src/app/services/money.service';
 import { StateServiceService } from 'src/app/services/state-service.service';
 
@@ -13,12 +14,38 @@ export class ConfirmPageComponent implements OnInit {
   bancoKey: boolean = false;
   dinamicKey: number = 0;
   staticKey: number = 391522;
+  timing: number = 60;
+  countdown!: Subscription;
+  inputKey!: number;
 
-  constructor(private moneyService: MoneyService, private stateService: StateServiceService) {}
+  constructor(
+    private moneyService: MoneyService,
+    private stateService: StateServiceService
+  ) {}
 
   generateDinamicKey(): number {
     return Math.floor(Math.random() * 900000) + 100000;
-}
+  }
+
+  startCountdown() {
+    this.countdown = interval(1000).subscribe(() => {
+      if (this.timing > 0) {
+        this.timing--;
+      } else {
+        this.resetCountdown();
+      }
+    });
+  }
+
+  resetCountdown() {
+    this.timing = 60;  // Reinicia el contador a 60 segundos
+    if (this.nequiKey) {
+      this.dinamicKey = this.generateDinamicKey();
+    }
+    if (this.bancoKey) {
+      this.dinamicKey = this.staticKey;
+    }
+  }
 
   ngOnInit(): void {
     this.moneyService.moneyValue$.subscribe((value) => {
@@ -33,17 +60,25 @@ export class ConfirmPageComponent implements OnInit {
       this.bancoKey = state;
     });
 
-    if(this.nequiKey){
+    if (this.nequiKey) {
       this.dinamicKey = this.generateDinamicKey();
+      this.startCountdown();
     }
 
-    if(this.bancoKey){
+    if (this.bancoKey) {
       this.dinamicKey = this.staticKey;
     }
-
   }
 
   @Output() changeState = new EventEmitter<boolean>();
+
+  confirmPayment(){
+    if(this.inputKey !== this.dinamicKey){
+      return alert("Clave incorrecta, pruebe otra vez")
+    } else {
+      return alert("bien hecho rey")
+    }
+  }
 
   close() {
     this.changeState.emit(false);

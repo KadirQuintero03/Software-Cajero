@@ -12,13 +12,12 @@ export class MoneyOptionsPageComponent {
   confirmpage: boolean = false;
   otherOptionPage: boolean = false;
   money!: number;
-  other: string = '';
 
   accesconfirm(value: boolean) {
-    if (this.other == '' && this.money == undefined) {
+    if (this.money == undefined) {
       return alert('Escoja alguna de las opciones');
     } else {
-      if (this.other == 'other') {
+      if (this.money == 1) {
         this.otherOptionPage = value;
       }
 
