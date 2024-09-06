@@ -20,6 +20,7 @@
       name="phoneNumber"
       type="number"
       placeholder="Telefono"
+      (input)="validateNumberInput($event)"
       class="border-b-2 border-gray-400 placeholder:text-[#000] text-xl p-2 focus:outline-none w-[18.75rem]"
     />
 
@@ -29,6 +30,7 @@
       name="password"
       type="password"
       placeholder="Clave"
+      (input)="validatePasswordInput($event)"
       class="border-b-2 border-gray-400 placeholder:text-[#000] text-xl p-2 mt-5 focus:outline-none w-[18.75rem]"
     />
 

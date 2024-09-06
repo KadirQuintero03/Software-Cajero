@@ -14,6 +14,6 @@ export class User2{
   _password1: string = '123456';
   _name1: string = "Manuel";
   _lastname1: string = "Legro";
-  _balance1: number = 4000000
+  _balance1: number = 3000000
   _typeAccount1: string = "Bancolombia"
 }

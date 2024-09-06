@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { User1, User2 } from 'src/app/interfaces/User';
 import { StateServiceService } from 'src/app/services/state-service.service';
 
@@ -9,6 +10,22 @@ import { StateServiceService } from 'src/app/services/state-service.service';
 })
 export class LoginPageComponent {
   constructor(private stateService: StateServiceService) {}
+
+  validateNumberInput(event: any) {
+    const input = event.target.value;
+
+    if (input.length > 11) {
+      event.target.value = input.slice(0, 11);
+    }
+  }
+
+  validatePasswordInput(event: any) {
+    const input = event.target.value;
+
+    if (input.length > 6) {
+      event.target.value = input.slice(0, 6);
+    }
+  }
 
   user1: User1 = new User1();
   user2: User2 = new User2();
