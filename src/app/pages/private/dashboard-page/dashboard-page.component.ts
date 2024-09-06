@@ -7,6 +7,7 @@ import { StateServiceService } from 'src/app/services/state-service.service';
   templateUrl: './dashboard-page.component.html',
   styleUrls: ['./dashboard-page.component.css'],
 })
+
 export class DashboardPageComponent implements OnInit {
   moneyOption: boolean = false;
 
