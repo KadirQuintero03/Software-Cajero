@@ -13,8 +13,12 @@ export class OtherOptionPageComponent {
   constructor(private moneyService: MoneyService){}
 
   confirm(value: boolean){
-    this.moneyService.setMoneyValue(this.money)
-    this.confirmpage = value;
+    if(0 == this.money % 10000){
+      this.moneyService.setMoneyValue(this.money)
+      this.confirmpage = value;
+    } else {
+      alert("Solo se aceptan valores que sean multiplos de 10000.")
+    }
   }
 
   @Output() changeState = new EventEmitter<boolean>();
