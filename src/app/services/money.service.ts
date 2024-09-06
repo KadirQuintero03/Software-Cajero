@@ -5,10 +5,10 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root'
 })
 export class MoneyService {
-  private moneyValue = new BehaviorSubject<boolean>(false);
+  private moneyValue = new BehaviorSubject<number>(0);
   moneyValue$ = this.moneyValue.asObservable();
 
-  setMoneyValue(value: boolean) {
+  setMoneyValue(value: number) {
     this.moneyValue.next(value);
   }
 

@@ -1,11 +1,18 @@
 <!-- Vista de loggin -->
 <body class="flex flex-col justify-center items-center h-[90vh] p-2">
   <div class="flex flex-col justify-center items-center" *ngIf="login">
-    <img
-      class="w-[18.75rem] h-[18.75rem] z-10 relative mb-[3rem]"
-      src="../../../../assets/logocarter.png"
-      alt="ImagenDeLoco"
-    />
+    <div class="mb-10">
+      <img
+        class="w-[20.75rem] h-[19.75rem] absolute -z-10"
+        src="../assets/LogoInicioFondo.png"
+        alt="ImagenDeInicioFondo"
+      />
+      <img
+        class="w-[20.75rem] h-[20.75rem] z-10 relative"
+        src="../assets/LogoInicio.png"
+        alt="ImagenDeInicio"
+      />
+    </div>
 
     <input
       [(ngModel)] = "phoneNumber"
