@@ -7,6 +7,7 @@ import { LoginPageComponent } from './pages/public/login-page/login-page.compone
 import { MoneyOptionsPageComponent } from './pages/private/money-options-page/money-options-page.component';
 import { ConfirmPageComponent } from './pages/private/confirm-page/confirm-page.component';
 import { OtherOptionPageComponent } from './pages/private/other-option-page/other-option-page.component';
+import { ReceiptPageComponent } from './pages/private/receipt-page/receipt-page.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { OtherOptionPageComponent } from './pages/private/other-option-page/othe
     MoneyOptionsPageComponent,
     ConfirmPageComponent,
     OtherOptionPageComponent,
+    ReceiptPageComponent,
   ],
   imports: [BrowserModule, FormsModule],
   providers: [],

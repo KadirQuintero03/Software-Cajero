@@ -19,6 +19,7 @@ export class ConfirmPageComponent implements OnInit {
   inputKey!: number;
   receiptPage: boolean = false;
   confirmPage: boolean = true;
+  tryValidate: number = 0;
 
   constructor(
     private moneyService: MoneyService,
@@ -40,7 +41,7 @@ export class ConfirmPageComponent implements OnInit {
   }
 
   resetCountdown() {
-    this.timing = 60;  // Reinicia el contador a 60 segundos
+    this.timing = 60; // Reinicia el contador a 60 segundos
     if (this.nequiKey) {
       this.dinamicKey = this.generateDinamicKey();
     }
@@ -74,9 +75,13 @@ export class ConfirmPageComponent implements OnInit {
 
   @Output() changeState = new EventEmitter<boolean>();
 
-  confirmPayment(){
-    if(this.inputKey !== this.dinamicKey){
-      return alert("Clave incorrecta, pruebe otra vez")
+  confirmPayment() {
+    if (this.inputKey !== this.dinamicKey) {
+      this.tryValidate++;
+      alert('Clave incorrecta lleva ' + this.tryValidate + ' intento fallido.');
+      if (this.tryValidate == 3) {
+        window.location.reload();
+      }
     } else {
       this.confirmPage = false;
       this.receiptPage = true;

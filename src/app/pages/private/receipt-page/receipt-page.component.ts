@@ -15,6 +15,9 @@ export class ReceiptPageComponent {
   receiptNequi: boolean = false;
   receiptBanco: boolean = false;
 
+  loginPage: boolean = false;
+  receiptPage: boolean = true;
+
   receipt: string = '';
   bank: string = '';
   accountNumber: string = '';
@@ -23,6 +26,10 @@ export class ReceiptPageComponent {
   time: string = '';
   TicketsDelivered = '';
   totalDelivered: number = 0;
+
+  finish(){
+    window.location.reload();
+  }
 
   constructor(
     private stateService: StateServiceService,
