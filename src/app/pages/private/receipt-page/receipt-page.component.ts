@@ -27,7 +27,7 @@ export class ReceiptPageComponent {
   TicketsDelivered = '';
   totalDelivered: number = 0;
 
-  finish(){
+  finish() {
     window.location.reload();
   }
 
@@ -52,13 +52,13 @@ export class ReceiptPageComponent {
     if (this.receiptNequi) {
       this.receipt = this.user1._typeAccount;
       this.bank = this.user1._typeAccount;
-      this.accountNumber = this.user1._phoneNumber;
+      this.accountNumber = '0' + this.user1._phoneNumber;
     }
 
     if (this.receiptBanco) {
       this.receipt = this.user2._typeAccount1;
       this.bank = this.user2._typeAccount1;
-      this.accountNumber = this.user2._phoneNumber1;
+      this.accountNumber = '1' + this.user2._phoneNumber1;
     }
 
     const now = new Date();

@@ -3,7 +3,7 @@
   *ngIf="receiptPage"
 >
   <div class="bg-[#FFFFFF] p-[2.5rem] flex flex-col gap-4 rounded-xl">
-    <p class="border-b-2">Recibo de {{ receipt }}</p>
+    <p class="border-b-2 text-center text-[#022a9b] text-2xl">Recibo de {{ receipt }}</p>
     <p class="border-b-2">Banco: {{ bank }}</p>
     <p class="border-b-2">Número de cuenta: {{ accountNumber }}</p>
     <p class="border-b-2">Tipo de operación: {{ typeOperation }}</p>
@@ -21,5 +21,3 @@
     </div>
   </div>
 </div>
-
-<app-login-page class="bg-[#FFFFFF] z-100" *ngIf="loginPage" />

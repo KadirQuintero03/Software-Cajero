@@ -8,7 +8,7 @@ import { StateServiceService } from 'src/app/services/state-service.service';
   styleUrls: ['./login-page.component.css'],
 })
 export class LoginPageComponent {
-  constructor(private stateService: StateServiceService){}
+  constructor(private stateService: StateServiceService) {}
 
   user1: User1 = new User1();
   user2: User2 = new User2();
@@ -26,16 +26,17 @@ export class LoginPageComponent {
       return alert('No puede dejar campos vacios');
     }
 
-    if (this.phoneNumber == this.user1._phoneNumber) {
+    if (this.phoneNumber == '3212110285') {
       this.phoneNumber = '0' + this.phoneNumber;
       if (
-        this.phoneNumber == '03012110285' &&
+        this.phoneNumber == this.user1._phoneNumber &&
         this.password == this.user1._password
       ) {
         this.stateService.setNequiState(true);
         this.stateService.setBancoState(false);
         this.login = false;
-        return (this.dashboard = true);
+        this.dashboard = true;
+        return;
       } else {
         this.phoneNumber = '';
         this.password = '';
@@ -43,20 +44,24 @@ export class LoginPageComponent {
       }
     }
 
-    if (this.phoneNumber == this.user2._phoneNumber1) {
-      this.phoneNumber = '1' + this.phoneNumber;
+    if (
+      this.phoneNumber == this.user2._phoneNumber1 &&
+      this.password == this.user2._password1
+    ) {
       if (
-        this.phoneNumber == '13205555181' &&
+        this.phoneNumber == '13115555181' &&
         this.password == this.user2._password1
       ) {
         this.stateService.setNequiState(false);
         this.stateService.setBancoState(true);
         this.login = false;
-        return (this.dashboard = true);
+        this.dashboard = true;
+        return;
       } else {
         this.phoneNumber = '';
         this.password = '';
-        return alert('Error al acceder a su cuenta de bancolombia');
+        alert('Error al acceder a su cuenta de bancolombia');
+        return;
       }
     }
 
