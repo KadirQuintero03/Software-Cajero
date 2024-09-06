@@ -1,9 +1,15 @@
-<p>Recibo de {{receipt}}</p>
-<p>Banco: {{bank}}</p>
-<p>Número de cuenta: {{accountNumber}}</p>
-<p>Tipo de operación: {{typeOperation}}</p>
-<p>Fecha: {{date}}</p>
-<p>Hora: {{time}}</p>
-<p>Billetes entregados: {{TicketsDelivered}}</p>
-<p>Total entregado: {{totalDelivered}}</p>
-<button>Cerrar</button>
+<div class="flex justify-center items-center h-[90vh] p-2 flex-col gap-8">
+  <div class="bg-[#FFFFFF] p-[2.5rem] flex flex-col gap-4 rounded-xl">
+    <p class="border-b-2">Recibo de {{receipt}}</p>
+    <p class="border-b-2">Banco: {{bank}}</p>
+    <p class="border-b-2">Número de cuenta: {{accountNumber}}</p>
+    <p class="border-b-2">Tipo de operación: {{typeOperation}}</p>
+    <p class="border-b-2">Fecha: {{date}}</p>
+    <p class="border-b-2">Hora: {{time}}</p>
+    <p class="border-b-2">Billetes entregados: {{TicketsDelivered}}</p>
+    <p class="border-b-2">Total entregado: {{totalDelivered}}</p>
+    <div class="flex justify-center items-center">
+      <button class="bg-[#022a9b] text-center text-lg font-bold text-white rounded-md p-2">Finalizar</button>
+    </div>
+  </div>
+</div>

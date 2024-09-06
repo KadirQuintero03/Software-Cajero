@@ -18,6 +18,7 @@ export class ConfirmPageComponent implements OnInit {
   countdown!: Subscription;
   inputKey!: number;
   receiptPage: boolean = false;
+  confirmPage: boolean = true;
 
   constructor(
     private moneyService: MoneyService,
@@ -77,7 +78,8 @@ export class ConfirmPageComponent implements OnInit {
     if(this.inputKey !== this.dinamicKey){
       return alert("Clave incorrecta, pruebe otra vez")
     } else {
-      this.receiptPage = true
+      this.confirmPage = false;
+      this.receiptPage = true;
     }
   }
 

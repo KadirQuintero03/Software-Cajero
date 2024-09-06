@@ -1,6 +1,7 @@
 <div class="w-full h-[85vh] flex justify-center items-center">
   <div
     class="bg-[#FFFFFF] p-12 rounded-[1.25rem] flex justify-center items-center flex-col gap-8"
+    *ngIf="confirmPage"
   >
     <div class="text-center p-5 rounded-[6.25rem] text-[#FFFFFF] bg-[#FF5E6D]">
       <p>Clave dinamica:</p>
@@ -29,9 +30,8 @@
       </button>
     </div>
   </div>
-
   <app-receipt-page
-  class="absolute inset-0 z-10"
-  *ngIf="receiptPage"
+    class="absolute inset-0 bg-[#022a9b] bg-opacity-50 backdrop-blur-lg z-20"
+    *ngIf="receiptPage"
   />
 </div>
