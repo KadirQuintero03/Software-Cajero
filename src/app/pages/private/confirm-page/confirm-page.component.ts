@@ -56,19 +56,13 @@ export class ConfirmPageComponent implements OnInit {
 
   logiCajero() {
     let suma = 0;
-    let cont = 0;
 
-    while (suma < this._money) {
-      for (let index = cont; index < 4; index++) {
+    for (let i = 0; suma < this._money; i++) {
+      for (let index = i % 4; index < 4 && suma < this._money; index++) {
         if (suma + this.billete[index] <= this._money) {
           suma += this.billete[index];
           this.guardarBillete.push(this.billete[index]);
         }
-      }
-      cont++;
-
-      if (cont === 3) {
-        cont = 0;
       }
     }
 
