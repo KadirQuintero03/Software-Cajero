@@ -20,6 +20,9 @@ export class ConfirmPageComponent implements OnInit {
   receiptPage: boolean = false;
   confirmPage: boolean = true;
   tryValidate: number = 0;
+  billete: number[] = [10000, 20000, 50000, 100000];
+  guardarBillete: number[] = [];
+  cantidadBillete: { [key: number]: number } = {};
 
   constructor(
     private moneyService: MoneyService,
@@ -50,6 +53,33 @@ export class ConfirmPageComponent implements OnInit {
     }
   }
 
+  logiCajero() {
+    let suma = 0;
+    let cont = 0;
+
+    while (suma < this._money) {
+      for (let index = cont; index < 4; index++) {
+        if (suma + this.billete[index] <= this._money) {
+          suma += this.billete[index];
+          this.guardarBillete.push(this.billete[index]);
+        }
+      }
+      cont++;
+
+      if (cont === 3) {
+        cont = 0;
+      }
+    }
+
+  this.guardarBillete.forEach((billete) => {
+    if (this.cantidadBillete[billete]) {
+      this.cantidadBillete[billete]++;
+    } else {
+      this.cantidadBillete[billete] = 1;
+    }
+  });
+  }
+
   ngOnInit(): void {
     this.moneyService.moneyValue$.subscribe((value) => {
       this._money = value;
@@ -76,6 +106,7 @@ export class ConfirmPageComponent implements OnInit {
   @Output() changeState = new EventEmitter<boolean>();
 
   confirmPayment() {
+    this.logiCajero();
     if (this.inputKey !== this.dinamicKey) {
       this.tryValidate++;
       alert('Clave incorrecta lleva ' + this.tryValidate + ' intento fallido.');
@@ -83,6 +114,7 @@ export class ConfirmPageComponent implements OnInit {
         window.location.reload();
       }
     } else {
+      this.moneyService.setCantBilete(this.cantidadBillete);
       this.confirmPage = false;
       this.receiptPage = true;
     }

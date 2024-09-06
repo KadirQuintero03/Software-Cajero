@@ -24,7 +24,7 @@ export class ReceiptPageComponent {
   typeOperation: string = 'retiro';
   date: string = '';
   time: string = '';
-  TicketsDelivered = '';
+  TicketsDelivered: { [key: number]: number } = {};
   totalDelivered: number = 0;
 
   finish() {
@@ -47,6 +47,10 @@ export class ReceiptPageComponent {
 
     this.moneyService.moneyValue$.subscribe((value) => {
       this.totalDelivered = value;
+    });
+
+    this.moneyService.cantbillete$.subscribe((value) => {
+      this.TicketsDelivered = value;
     });
 
     if (this.receiptNequi) {

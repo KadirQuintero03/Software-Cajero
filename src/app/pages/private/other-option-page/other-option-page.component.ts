@@ -13,6 +13,11 @@ export class OtherOptionPageComponent {
   constructor(private moneyService: MoneyService){}
 
   confirm(value: boolean){
+
+    if(this.money == 0){
+      return alert("valor no permitido.")
+    }
+
     if(0 == this.money % 10000){
       this.moneyService.setMoneyValue(this.money)
       this.confirmpage = value;
